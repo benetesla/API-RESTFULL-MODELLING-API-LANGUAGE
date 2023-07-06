@@ -1,0 +1,54 @@
+#%RAML 1.0
+title: session-2
+
+types:
+ databaseSchema: !include /schemas/databaseSchema.raml
+ seachExample: !include /examples/searchExample.raml
+/search:
+  get:
+    queryParameters:
+       keyword:
+         type: string
+         minLength: 3
+         maxLength: 10
+    responses:
+      200:
+        body:
+          application/json:
+             example:  seachExample
+  post:
+    queryParameters:
+       keyword:
+         type: string
+         minLength: 3
+         maxLength: 10
+    responses:
+      200:
+        body:
+          application/json:
+             example: seachExample
+/news:
+  post:
+    queryParameters:
+      country:
+        required: false
+        enum:
+          - BR
+          - CHINA
+          - CANADA
+    body:
+        application/json:
+         type: databaseSchema
+    responses:
+                201:
+                  body:
+                    application/json:
+                      example: seachExample
+/sportsNews:
+  put:
+    body:
+      application/json:
+        type: databaseSchema
+        example:
+          password: "qqyebebbd"
+          username: "benev"
