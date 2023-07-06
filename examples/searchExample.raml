@@ -1,2 +1,24 @@
 #%RAML 1.0 NamedExample
-  {"message": "result returned sucessfull"}
+title: NamedExample
+type: json
+examples:
+  - name: First Example
+    displayName: Retorno de um usuário
+    description: Este é um exemplo de como sera o retorno da API
+    value: |
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "bret@gmail.com"
+      }
+  - name: Second Example
+    displayName: Retorno de uma noticia
+    description: Este é um exemplo de como sera o retorno da API
+    value: |
+      {
+        "id": 1,
+        "title": "Titulo da noticia",
+        "description": "Descrição da noticia",
+        "content": "Conteudo da noticia"
+      }
